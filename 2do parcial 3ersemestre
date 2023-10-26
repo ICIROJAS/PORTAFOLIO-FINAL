@@ -1,0 +1,341 @@
+while True:
+    print("Mi calculadora")
+    print("           ")
+    print("1.suma")
+    print("2.resta")
+    print("3.multiplicacion")
+    print("4.division")
+    print("5.salir")
+
+    opcion= input("seleciona")
+
+    if opcion == "5":
+        print("Hasta luego")
+        break
+num1=float(input("Ingresa un numero: "))
+num2=float(input("Ingresa un numero: "))
+if opcion =='1' :
+    print("Resultado: ", num1 + num2)
+elif opcion == '2':
+
+    print("resultado: ",num1 - num2)
+elif opcion == '3':
+    print("resultado: ",num1 * num2)
+elif opcion == '4':
+    if num2 != 0 :
+        print("Resultado: ", num1 / num2 )
+    else: print("No se divide entre cero")
+else: print("Gracias")
+
+
+CLASE2
+#Listas o colecciones
+
+def suma(a,b):
+    return a+b
+def resta(a,b):
+    return a-b
+def multiplicacion(a,b):
+    return a*b
+def division(a,b):
+    return a+b 
+
+operaciones =[suma,resta,multiplicacion,division]
+print(operaciones[0](5,4))
+print(operaciones[1](5,4))
+print(operaciones[2](5,4))
+print(operaciones[3](5,4))
+print("              ")
+
+for operacion in operaciones:
+    print(operacion(5,4))
+Lista = [1,2,3,True,5.5,"hola",[1,2,3]]
+print(Lista)
+print(Lista[:])
+print(Lista[0:])
+print(Lista[7:-1])
+print(Lista[:-1])
+print(Lista[-3:-1]) 
+#""" Lista[8]= "hola mundo"
+#print(Lista[8]) """
+
+#la lista es indexable y si se pueden cambiar los valores es lista mutable
+
+
+""" def operaciones(a,b):
+    return [a+b,a-b,a*b,a/b] """
+
+""" respuestas = operaciones(5,4)
+print(respuestas)
+w,x,y,z = operaciones(5,4)
+print(w)
+
+res_suma,_,_,_ = operaciones(5,4)
+print(res_suma) """
+
+""" def suma(a,b):
+    pass
+
+print(suma(3,4)) """
+
+#tuple
+
+tupla1 = (1,2,3,True,5.5,"hola",[1,2,4])
+tuplaf=(suma,resta,multiplicacion,division)
+
+print(tuplaf[0](5,4))
+Lista.append(10)
+print(Lista)
+
+tupla1.__add__((10,19))
+print(tupla1)
+
+def sumatoria(a:int,b:int) -> int:
+    return a + b
+    
+def sum(a:int,b:int) -> (int,int):
+    return (a+b,a-b)
+
+(a,b)=sum(5,6)
+a,b = sum(6,5)
+
+print(a,b)
+#range
+
+
+numeros = range(5,10)
+print(numeros)
+
+for i in numeros:
+    print(i,end=" ")
+
+
+numeros_pares = range(2,11,2)
+
+print("       ")
+
+for par in numeros_pares:
+    print(par,end=" ")
+print("       ")
+
+for item in range(2,11,2):
+    print(item,end=" ")
+
+ListaW = [3,6,7,40,34,67,89]
+print("       ")
+print(max(ListaW))
+print("         ")
+print(min(ListaW))
+print("          ")
+print(sorted(ListaW)) #el .sort tambien la ordena
+
+
+
+#set conjuntos
+# mi set no repite datos
+mi_set = {1,2,3,3,3,3,3,3,3,2,32,343}
+print(mi_set)
+
+print("         ")
+print(list(set(mi_set)))
+
+mi_set1= {6,5,7,8,9,4,3,43,343,43,56,76}
+
+
+print(mi_set.union(mi_set1))
+
+#diccionarios
+
+mi_dict = {"key":"valor"}
+
+print(mi_dict["key"])
+mi_dict.keys()
+mi_dict.values()
+
+
+
+for i in mi_dict:
+    print(i)
+
+    CLASE 3
+    """ import milibreria.Clase_5 as lib # as op funciona como para poner un apodo
+import milibreria.resta as lib """
+
+from milibreria import Clase_5,resta
+      
+if __name__=="__main__":
+   print(Clase_5.suma(7,8))
+   print(resta.resta(8,5))
+
+
+
+   from dataclasses import dataclass
+
+#decorador es una funcion que modifica otra funcion
+@dataclass #decorators
+class User:
+    id: str
+    name: str
+    age: int
+
+    def show_data(self):
+        return f"ID: {self.id} Nombre: {self.name} Edad: {self.age}"
+
+if "__name__"=="__main__":
+    usuario= User("1","Kratos",65)
+    usuario1= User("2","Kra",35)
+    usuario2= User("3","tos",5)
+
+    usuarios = [usuario,usuario1,usuario2]
+
+    
+    print(usuario.show_data())
+
+    CLASE 
+    def avg(*args):
+    """Returns the average of a list of numeric values.
+       Example:
+       avg(1,2,3)
+       output:
+       2.0
+    
+    """
+    return sum(args) / len(args)
+
+""" print(avg.__doc__)
+#print(avg([1,2,3]))
+
+
+
+def doble(x:int)->int:
+    return x*2
+
+def cua(f):
+    return f ** 2 """
+
+
+""" my_doble = doble """
+""" 
+result = my_doble(5)
+cuadrado = cua(doble)
+print(cuadrado)
+print(result)
+print(cuadrado) """
+
+""" y = lambda x:x * 2
+z = lambda x:x+1
+w = (lambda x:x + 1) (2)
+
+print(y(2)) 
+print(z(2)) 
+#print(w(2)) """
+
+
+""" num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+
+for i in num:
+    print("hola")
+    #print(i) """
+#Caso base recursividad
+#Arboles
+#funciones recursivas
+from timeit  import timeit
+""" import sys """
+#evitar que no se quede en loop infinit 
+# hello
+""" sys.setrecursionlimit(20)
+def f():
+    x=10
+    f()
+
+
+
+
+def factorial(n):
+    result = 1
+    for i in range(1,n + 1):
+        result *= i
+    return result
+
+print(factorial(5)) """
+
+timeit("print(string)", setup="string='Hola mundo'",number = 100)
+CLASE
+
+""" e = 10
+print(id(e))
+print(max(1,2,3,4,5,6,7,8,9))
+print(min(1,2,3,4,5,6,7,8,9))
+ """
+
+
+
+""" def a():
+    x = "hola"
+    print(f"{x}:{id(x)}")
+
+def b():
+    x = "hola"
+    print(f"{x}:{id(x)}")
+
+x = "hola"
+a()
+b()
+print(f"{x}:{id(x)}") """
+
+
+""" list = [1,2,3,4,5,6]
+print(sorted(list),4) """
+
+""" def c():
+    global x
+    x="bye"
+    print(id(x)) """
+    
+ 
+""" c()
+print(id(x))
+x = 10
+print(id(x))    
+
+def d():
+    print(x)
+    
+d()  """   
+  
+  
+""" def e():
+     #global y 
+    y = "mundo"
+    print(id(y))  """ 
+    
+""" print(y)  """
+
+#no es lo mismo parametros y argumentos
+#estructura de funcion
+""" def nombre de funcion ([parametros]):
+    sentencias  """
+
+""" def funcion():
+    msg = "dentro de mi funcion"
+    print(msg)
+    
+print("Antes de llamar a mi funcion")
+
+funcion()
+
+print("Despues de mi funcion") """
+
+
+""" def productos(producto,cantidad,precio):
+    print(f"{cantidad}, {producto},{precio}")
+
+productos("manzana",34,36) """
+
+def productos(producto,cantidad,precio):
+    print(f"{cantidad}, {producto},{precio}")
+
+productos(producto="manzanas",cantidad= 32,precio = 56)
+
+#todos los posicionales van primero y luego los nombrados
